@@ -1,0 +1,113 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.control-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.play-pause-btn {
+  background: #5a8f7a;
+  color: white;
+}
+
+.play-pause-btn:hover {
+  background: #4a7a68;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.step-btn {
+  background: #6b7fa3;
+  color: white;
+}
+
+.step-btn:hover {
+  background: #5a6d8f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.reset-btn {
+  background: #b86b6b;
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #9d5a5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.speed-control label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.speed-slider {
+  width: 150px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-color);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-gradient-start);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.speed-slider::-webkit-slider-thumb:hover {
+  background: var(--bg-gradient-end);
+  transform: scale(1.2);
+}
+
+.speed-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-gradient-start);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.speed-slider::-moz-range-thumb:hover {
+  background: var(--bg-gradient-end);
+  transform: scale(1.2);
+}
+
+.speed-value {
+  font-weight: 500;
+  color: var(--bg-gradient-start);
+  min-width: 50px;
+}

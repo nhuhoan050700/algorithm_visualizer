@@ -1,0 +1,160 @@
+.algorithm-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.algorithm-selector-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.algorithm-selector-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.category-tabs button,
+.algorithm-options button {
+  padding: 10px 20px;
+  border: 2px solid var(--bg-gradient-start);
+  background: var(--bg-primary);
+  color: var(--bg-gradient-start);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Make sub-choice buttons smaller */
+.algorithm-options button {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.category-tabs button:hover,
+.algorithm-options button:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+}
+
+.category-tabs button.active,
+.algorithm-options button.active {
+  background: var(--bg-gradient-start);
+  color: white;
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+/* Category-specific colors */
+.category-tabs button:nth-child(1) {
+  /* Sorting */
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.category-tabs button:nth-child(1).active {
+  background: #3b82f6;
+}
+
+.category-tabs button:nth-child(2) {
+  /* Pathfinding */
+  border-color: #10b981;
+  color: #047857;
+}
+
+.category-tabs button:nth-child(2).active {
+  background: #10b981;
+}
+
+.category-tabs button:nth-child(3) {
+  /* Data Structures */
+  border-color: #ec4899;
+  color: #be185d;
+}
+
+.category-tabs button:nth-child(3).active {
+  background: #ec4899;
+}
+
+/* Algorithm option colors by category */
+.algorithm-options button.sorting-option {
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.algorithm-options button.sorting-option.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.algorithm-options button.pathfinding-option {
+  border-color: #10b981;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.algorithm-options button.pathfinding-option.active {
+  background: #10b981;
+  color: white;
+}
+
+.algorithm-options button.data-option {
+  border-color: #ec4899;
+  color: #be185d;
+  background: rgba(236, 72, 153, 0.06);
+}
+
+.algorithm-options button.data-option.active {
+  background: #ec4899;
+  color: white;
+}
+
+.algorithm-options {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.algorithm-selector-hint {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 3px;
+}
+
+.chip-sorting {
+  background: rgba(102, 126, 234, 0.12);
+  color: var(--bg-gradient-start);
+}
+
+.chip-pathfinding {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+.chip-data {
+  background: rgba(236, 72, 153, 0.12);
+  color: #db2777;
+}

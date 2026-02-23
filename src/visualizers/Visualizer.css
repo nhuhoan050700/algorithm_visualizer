@@ -1,0 +1,123 @@
+.visualizer {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.visualizer-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.visualizer-controls button {
+  padding: 8px 16px;
+  border: 2px solid var(--bg-gradient-start);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--bg-gradient-start);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.visualizer-controls button:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.visualizer-controls button.active {
+  background: var(--bg-gradient-start);
+  color: white;
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.visualizer-controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.visualizer-controls input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.size-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.size-control label {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.size-slider {
+  width: 150px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-color);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.size-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-gradient-start);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.size-slider::-webkit-slider-thumb:hover {
+  background: var(--bg-gradient-end);
+  transform: scale(1.2);
+}
+
+.size-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-gradient-start);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.size-slider::-moz-range-thumb:hover {
+  background: var(--bg-gradient-end);
+  transform: scale(1.2);
+}
+
+.size-value {
+  font-weight: 500;
+  color: var(--bg-gradient-start);
+  min-width: 30px;
+  font-size: 0.9rem;
+}
