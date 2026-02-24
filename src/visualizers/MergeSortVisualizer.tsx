@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { VisualizationState } from '../App'
-import ArrayVisualizer from '../components/ArrayVisualizer'
+import ArrayVisualizer, { type Bar } from '../components/ArrayVisualizer'
 import { generateRandomArray, mergeSort } from '../algorithms/mergeSort'
 import './Visualizer.css'
 
@@ -11,7 +11,7 @@ interface MergeSortVisualizerProps {
 
 export default function MergeSortVisualizer({ state, setState }: MergeSortVisualizerProps) {
   const [arraySize, setArraySize] = useState(20)
-  const [bars, setBars] = useState(() => {
+  const [bars, setBars] = useState<Bar[]>(() => {
     const arr = generateRandomArray(20, 100)
     return arr.map((val) => ({ value: val, state: 'default' as const }))
   })
@@ -88,7 +88,7 @@ export default function MergeSortVisualizer({ state, setState }: MergeSortVisual
     }
   }
 
-  const handleManualReorder = (newBars: typeof bars) => {
+  const handleManualReorder = (newBars: Bar[]) => {
     setBars(newBars)
     generatorRef.current = null
     setState(prev => ({ ...prev, isPlaying: false, step: 0, isComplete: false }))
