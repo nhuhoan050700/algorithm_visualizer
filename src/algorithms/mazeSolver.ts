@@ -19,12 +19,9 @@ export function* solveMaze(
   const cols = grid[0].length
   const visited: boolean[][] = Array(rows).fill(null).map(() => Array(cols).fill(false))
   const path: Array<[number, number]> = []
-  let callStackDepth = 0
 
   function* backtrack(row: number, col: number, depth: number): Generator<MazeStep> {
-    callStackDepth = depth
-    
-    // Base case: reached end
+    // Base case: reached end reached end
     if (row === endRow && col === endCol) {
       const newGrid = grid.map(r => r.map(c => ({ ...c })))
       path.forEach(([r, c]) => {

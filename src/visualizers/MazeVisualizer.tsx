@@ -71,13 +71,6 @@ export default function MazeVisualizer({ state, setState }: MazeVisualizerProps)
     }
   }, [state.resetTrigger, setState])
 
-  const handlePlay = () => {
-    if (!generatorRef.current) {
-      generatorRef.current = solveMaze(grid, startRow, startCol, endRow, endCol)
-    }
-    setState(prev => ({ ...prev, isPlaying: true, isComplete: false }))
-  }
-
   const handleStep = () => {
     if (!generatorRef.current) {
       generatorRef.current = solveMaze(grid, startRow, startCol, endRow, endCol)

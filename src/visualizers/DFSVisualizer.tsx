@@ -75,12 +75,6 @@ export default function DFSVisualizer({ state, setState }: DFSVisualizerProps) {
     }
   }, [state.isPlaying, state.speedDelay, setState, grid])
 
-  const handleReset = () => {
-    setGrid(generatePathfindingGrid(gridSize, gridSize))
-    generatorRef.current = null
-    setState(prev => ({ ...prev, isPlaying: false, step: 0, isComplete: false }))
-  }
-
   const handleSizeChange = (newSize: number) => {
     setGridSize(newSize)
     setGrid(generatePathfindingGrid(newSize, newSize))
@@ -95,14 +89,6 @@ export default function DFSVisualizer({ state, setState }: DFSVisualizerProps) {
       setState(prev => ({ ...prev, isPlaying: false, step: 0, isComplete: false }))
     }
   }, [state.resetTrigger, setState, gridSize])
-
-  const handlePlay = () => {
-    if (!generatorRef.current) {
-      const { startRow, startCol, endRow, endCol } = getStartEnd()
-      generatorRef.current = dfs(grid, startRow, startCol, endRow, endCol)
-    }
-    setState(prev => ({ ...prev, isPlaying: true, isComplete: false }))
-  }
 
   const handleStep = () => {
     if (!generatorRef.current) {

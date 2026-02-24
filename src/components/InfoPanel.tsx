@@ -50,7 +50,7 @@ const algorithmInfo: Record<AlgorithmType, {
   },
 }
 
-export default function InfoPanel({ algorithm, state }: InfoPanelProps) {
+export default function InfoPanel({ algorithm }: InfoPanelProps) {
   const categoryClass =
     algorithm === 'merge-sort' || algorithm === 'quick-sort' || algorithm === 'bubble-sort'
       ? 'sorting'

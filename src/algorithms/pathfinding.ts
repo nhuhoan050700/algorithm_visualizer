@@ -64,7 +64,7 @@ export function* bfs(
       // Found path
       const pathGrid = grid.map((r) =>
         r.map((c) => {
-          const isInPath = path.some(([r, c]) => r === c.row && c === c.col)
+          const isInPath = path.some(([pathRow, pathCol]) => pathRow === c.row && pathCol === c.col)
           if (isInPath && c.type !== 'start' && c.type !== 'end') {
             return { ...c, type: 'path' as CellType }
           }

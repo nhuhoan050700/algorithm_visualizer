@@ -57,13 +57,6 @@ export default function QuickSortVisualizer({ state, setState }: QuickSortVisual
     }
   }, [state.isPlaying, state.speedDelay, setState, bars])
 
-  const handleReset = () => {
-    const arr = generateRandomArray(arraySize, 100)
-    setBars(arr.map((val) => ({ value: val, state: 'default' as const })))
-    generatorRef.current = null
-    setState(prev => ({ ...prev, isPlaying: false, step: 0, isComplete: false }))
-  }
-
   const handleSizeChange = (newSize: number) => {
     setArraySize(newSize)
     const arr = generateRandomArray(newSize, 100)
@@ -80,14 +73,6 @@ export default function QuickSortVisualizer({ state, setState }: QuickSortVisual
       setState(prev => ({ ...prev, isPlaying: false, step: 0, isComplete: false }))
     }
   }, [state.resetTrigger, setState, arraySize])
-
-  const handlePlay = () => {
-    if (!generatorRef.current) {
-      const arr = bars.map(b => b.value)
-      generatorRef.current = quickSort(arr)
-    }
-    setState(prev => ({ ...prev, isPlaying: true, isComplete: false }))
-  }
 
   const handleStep = () => {
     if (!generatorRef.current) {
