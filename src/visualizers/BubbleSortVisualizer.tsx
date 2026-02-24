@@ -87,6 +87,12 @@ export default function BubbleSortVisualizer({ state, setState }: BubbleSortVisu
     }
   }
 
+  const handleManualReorder = (newBars: typeof bars) => {
+    setBars(newBars)
+    generatorRef.current = null
+    setState(prev => ({ ...prev, isPlaying: false, step: 0, isComplete: false }))
+  }
+
   useEffect(() => {
     if (state.stepTrigger && !state.isPlaying) {
       handleStep()
@@ -125,7 +131,12 @@ export default function BubbleSortVisualizer({ state, setState }: BubbleSortVisu
           <span className="size-value">{state.speed}%</span>
         </div>
       </div>
-      <ArrayVisualizer bars={bars} maxValue={maxValue} />
+      <ArrayVisualizer
+        bars={bars}
+        maxValue={maxValue}
+        draggable={!state.isPlaying}
+        onReorder={handleManualReorder}
+      />
     </div>
   )
 }

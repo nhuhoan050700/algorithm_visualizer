@@ -26,11 +26,18 @@
   min-width: 0;
   flex: 1 1 0;
   position: relative;
+  cursor: grab;
 }
 
 .bar:hover {
   opacity: 0.8;
   transform: translateY(-5px);
+}
+
+.bar.dragging {
+  opacity: 0.6;
+  transform: translateY(-8px);
+  cursor: grabbing;
 }
 
 .bar-value {
