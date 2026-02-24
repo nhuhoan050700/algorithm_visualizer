@@ -16,14 +16,9 @@ export default function AlgorithmSelector({
 }: AlgorithmSelectorProps) {
   return (
     <div className="algorithm-selector">
-      <div className="algorithm-selector-header">
-        <h2>Choose what to explore</h2>
-        <p className="algorithm-selector-subtitle">
-          Start with a category, then pick an algorithm to see it step by step.
-        </p>
-      </div>
-
-      <div className="category-tabs">
+      <div className="category-row">
+        <span className="category-label">Category</span>
+        <div className="category-tabs">
         <button
           className={category === 'sorting' ? 'active' : ''}
           onClick={() => onCategoryChange('sorting')}
@@ -42,9 +37,12 @@ export default function AlgorithmSelector({
         >
           Data Structures
         </button>
+        </div>
       </div>
 
-      <div className="algorithm-options">
+      <div className="algorithm-row">
+        <span className="algorithm-label">Algorithm</span>
+        <div className="algorithm-options">
         {category === 'sorting' && (
           <>
             <button
@@ -93,6 +91,7 @@ export default function AlgorithmSelector({
             Linked List
           </button>
         )}
+        </div>
       </div>
     </div>
   )

@@ -117,9 +117,6 @@ function App() {
           onCategoryChange={handleCategoryChange}
           onAlgorithmChange={handleAlgorithmChange}
         />
-      </div>
-      
-      <div className="controls-section">
         <Controls
           isPlaying={state.isPlaying}
           onPlayPause={handlePlayPause}

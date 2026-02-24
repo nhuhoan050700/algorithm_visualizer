@@ -33,8 +33,6 @@ export default function ArrayVisualizer({ bars, maxValue }: ArrayVisualizerProps
     }
   }
 
-  const showBarValues = bars.length <= 30
-
   return (
     <div className="array-visualizer">
       <div className="bars-container">
@@ -49,7 +47,7 @@ export default function ArrayVisualizer({ bars, maxValue }: ArrayVisualizerProps
             }}
             title={`Value: ${bar.value}`}
           >
-            {showBarValues && <span className="bar-value">{bar.value}</span>}
+            <span className="bar-value">{bar.value}</span>
           </div>
         ))}
       </div>
